@@ -26,13 +26,13 @@ YOLOv12s brings significant improvements over previous YOLO versions:
 # 🔧 Environment Setup
 1. Configure Roboflow API Key (Get your key from Roboflow Settings and then store it in Colab)
 
-import os
-from google.colab import userdata  
+import os  
+
+from google.colab 
+
+import userdata  
 
 os.environ["ROBOFLOW_API_KEY"] = userdata.get("ROBOFLOW_API_KEY")  
-
-# Note: 
-Your respective api key, you can get it by first logging in an activating account in -> https://app.roboflow.com/login
 
 2. Install Dependencies
 !pip install roboflow supervision
@@ -43,8 +43,11 @@ Your respective api key, you can get it by first logging in an activating accoun
 
 !pip install -r requirements.txt
 
-4. GPU Check (Optional but Recommended)
+3. GPU Check (Optional but Recommended)
 !nvidia-smi
+
+# Note: 
+Your respective api key, you can get it by first logging in an activating account in -> https://app.roboflow.com/login
 
 # 📊 Dataset
 Dataset is fetched from Roboflow and consists of annotated images for:
