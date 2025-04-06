@@ -24,18 +24,18 @@ YOLOv12s brings significant improvements over previous YOLO versions:
 ├── Enhanced detection accuracy for agricultural segmentation.
 
 ## 🔧 Environment Setup
-├── 1. Configure Roboflow API Key (Get your key from Roboflow Settings and then store it in Colab)
-## import os
-## from google.colab import userdata
-## os.environ["ROBOFLOW_API_KEY"] = userdata.get("ROBOFLOW_API_KEY")  #your respective api key, you can get it by first logging in an activating account in -> https://app.roboflow.com/login
+# ├── 1. Configure Roboflow API Key (Get your key from Roboflow Settings and then store it in Colab)
+import os
+from google.colab import userdata
+os.environ["ROBOFLOW_API_KEY"] = userdata.get("ROBOFLOW_API_KEY")  #your respective api key, you can get it by first logging in an activating account in -> https://app.roboflow.com/login
 
-├── 2. Install Dependencies
-## !pip install roboflow supervision
-## !git clone https://github.com/YOLOv12/YOLOv12
-## %cd YOLOv12
-## !pip install -r requirements.txt
+# ├── 2. Install Dependencies
+!pip install roboflow supervision
+!git clone https://github.com/YOLOv12/YOLOv12
+%cd YOLOv12
+!pip install -r requirements.txt
 
-├── 3. GPU Check (Optional but Recommended)
+# ├── 3. GPU Check (Optional but Recommended)
 !nvidia-smi
 
 ## 📊 Dataset
@@ -44,18 +44,18 @@ Crop Areas (class 0)
 Non-Crop Areas (class 1)
 
 You can simply use the dataset by running the below code:
-## from roboflow import Roboflow
-## rf = Roboflow(api_key=ROBOFLOW_API_KEY)
-## project = rf.workspace("your-workspace").project("your-dataset")
-## dataset = project.version("x").download("yolov12")
+from roboflow import Roboflow
+rf = Roboflow(api_key=ROBOFLOW_API_KEY)
+project = rf.workspace("your-workspace").project("your-dataset")
+dataset = project.version("x").download("yolov12")
 
 ## 🏋️‍♂️ Model Training
 Training is done with the YOLOv12 CLI inside the cloned repo:
-## !python train.py --data data.yaml --epochs 100 --img 640 --batch 16 --weights yolov12s.pt
+!python train.py --data data.yaml --epochs 100 --img 640 --batch 16 --weights yolov12s.pt
 
 ## 🔍 Inference
 You can test on your own image or downloaded samples:
-## !python detect.py --weights runs/train/exp/weights/best.pt --img 640 --source test_image.jpg
+!python detect.py --weights runs/train/exp/weights/best.pt --img 640 --source test_image.jpg
 
 ## 📈 Results
 The model achieves:
