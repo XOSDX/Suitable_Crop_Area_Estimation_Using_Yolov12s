@@ -49,9 +49,9 @@ Non-Crop Areas (class 1)
 
 You can simply use the dataset by running the below code:
 
-from roboflow import Roboflow
-rf = Roboflow(api_key=ROBOFLOW_API_KEY)
-project = rf.workspace("your-workspace").project("your-dataset")
+from roboflow import Roboflow  <be>
+rf = Roboflow(api_key=ROBOFLOW_API_KEY)  <be>
+project = rf.workspace("your-workspace").project("your-dataset")  <be>
 dataset = project.version("x").download("yolov12")
 
 # 🏋️‍♂️ Model Training
@@ -74,4 +74,4 @@ The model achieves:
 ├── Land Suitability Analysis for Cultivation
 
 # 🤝 Contributing
-Got ideas for improvements or want to collaborate? Send me a message on my LinkedIn as I am super active there -> linkedin.com/in/om-subrato-dey/
+Got ideas for improvements or want to collaborate? Send me a message on my LinkedIn as I am super active there -> [linkedin.com/in/om-subrato-dey/](https://www.linkedin.com/in/om-subrato-dey/)
