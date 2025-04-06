@@ -1,5 +1,5 @@
 # Suitable_Crop_Area_Estimation_Using_Yolov12s
-Implementing the latest Yolov12s version for the determination of detecting the crop and non-crop areas suitable for cultivation. This is the advanced application in the field of Artificial Intelligence and Deep Learning, making the use of the Yolov12s model because of its perks.
+Implementing the latest Yolov12s version to detect crop and non-crop areas suitable for cultivation. This is an advanced application in the field of Artificial Intelligence and Deep Learning, making the use of the Yolov12s model because of its perks.
 
 # 🌾 Crop Area Detection using YOLOv12s
 This project implements the **YOLOv12s** model to accurately detect **crop** and **non-crop areas** from aerial or satellite imagery. It’s a cutting-edge application in **Artificial Intelligence** and **Deep Learning** aimed at enhancing agricultural planning and cultivation decisions.
@@ -27,7 +27,8 @@ YOLOv12s brings significant improvements over previous YOLO versions:
 1. Configure Roboflow API Key (Get your key from Roboflow Settings and then store it in Colab)
 
 import os
-from google.colab import userdata
+from google.colab import userdata  
+
 os.environ["ROBOFLOW_API_KEY"] = userdata.get("ROBOFLOW_API_KEY")  
 
 # Note: 
@@ -35,11 +36,14 @@ Your respective api key, you can get it by first logging in an activating accoun
 
 2. Install Dependencies
 !pip install roboflow supervision
-!git clone https://github.com/YOLOv12/YOLOv12
-%cd YOLOv12
+
+!git clone https://github.com/YOLOv12/YOLOv12  
+
+%cd YOLOv12  
+
 !pip install -r requirements.txt
 
-3. GPU Check (Optional but Recommended)
+4. GPU Check (Optional but Recommended)
 !nvidia-smi
 
 # 📊 Dataset
@@ -49,9 +53,12 @@ Non-Crop Areas (class 1)
 
 You can simply use the dataset by running the below code:
 
-from roboflow import Roboflow  <be>
-rf = Roboflow(api_key=ROBOFLOW_API_KEY)  <be>
-project = rf.workspace("your-workspace").project("your-dataset")  <be>
+from roboflow import Roboflow  
+
+rf = Roboflow(api_key=ROBOFLOW_API_KEY)  
+
+project = rf.workspace("your-workspace").project("your-dataset")  
+
 dataset = project.version("x").download("yolov12")
 
 # 🏋️‍♂️ Model Training
