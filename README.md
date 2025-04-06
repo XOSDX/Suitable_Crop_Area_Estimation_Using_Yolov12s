@@ -25,9 +25,13 @@ YOLOv12s brings significant improvements over previous YOLO versions:
 
 # 🔧 Environment Setup
 1. Configure Roboflow API Key (Get your key from Roboflow Settings and then store it in Colab)
+
 import os
 from google.colab import userdata
-os.environ["ROBOFLOW_API_KEY"] = userdata.get("ROBOFLOW_API_KEY")  #your respective api key, you can get it by first logging in an activating account in -> https://app.roboflow.com/login
+os.environ["ROBOFLOW_API_KEY"] = userdata.get("ROBOFLOW_API_KEY")  
+
+# Note: 
+Your respective api key, you can get it by first logging in an activating account in -> https://app.roboflow.com/login
 
 2. Install Dependencies
 !pip install roboflow supervision
@@ -44,6 +48,7 @@ Crop Areas (class 0)
 Non-Crop Areas (class 1)
 
 You can simply use the dataset by running the below code:
+
 from roboflow import Roboflow
 rf = Roboflow(api_key=ROBOFLOW_API_KEY)
 project = rf.workspace("your-workspace").project("your-dataset")
